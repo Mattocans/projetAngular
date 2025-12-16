@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, input} from '@angular/core';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -7,8 +7,6 @@ import {MatTimepickerModule} from '@angular/material/timepicker';
 import {provideNativeDateAdapter} from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {Produit} from '../model/produict.interface';
-import {prod1, prod2, prod3, prod4, prod5} from '../data/dataProduit';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 
@@ -35,6 +33,7 @@ import {MatCardModule} from '@angular/material/card';
   standalone: true
 })
 export class Product {
+
   language: 'fr' | 'en' = 'fr';
   texts = {
     fr: "Texte en français, mdr je ne sais pas quoi écrire !",
@@ -64,11 +63,4 @@ export class Product {
     fr: "English",
     en: "Français"
   }
-
-  produit1: Produit = prod1
-  produit2: Produit = prod2
-  produit3: Produit = prod3
-  produit4: Produit = prod4
-  produit5: Produit = prod5
-
 }
