@@ -8,10 +8,7 @@ import {provideNativeDateAdapter} from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {Produit} from '../model/produict.interface';
-import {prod1} from '../data/dataProduit';
-import {prod2} from '../data/dataProduit';
-import {prod3} from '../data/dataProduit';
-import {prod4} from '../data/dataProduit';
+import {prod1, prod2, prod3, prod4, prod5} from '../data/dataProduit';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 
@@ -72,5 +69,6 @@ export class Product {
   produit2: Produit = prod2
   produit3: Produit = prod3
   produit4: Produit = prod4
+  produit5: Produit = prod5
 
 }

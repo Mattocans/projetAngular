@@ -86,8 +86,8 @@
       <span>Stock : {{ produit3.stock }}</span>
     </mat-card-content>
     <mat-card-actions>
-      {{  }}
-      <button matButton>Ajouter au panier</button>
+
+      <button matButton disabled="{{ produit3.stock === 0 ? 'desiabled' : 'false' }}">Ajouter au panier</button>
       <button matButton>Acheter</button>
     </mat-card-actions>
   </mat-card>
@@ -111,3 +111,23 @@
     </mat-card-actions>
   </mat-card>
 </div>
+
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ produit5.nom }}</mat-card-title>
+    <mat-card-subtitle>{{ produit5.prix }} €</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{ produit5.image }}" alt="Pull dab">
+  <mat-card-content>
+    <p>
+      {{ produit5.description }}
+    </p>
+    <span>Stock : {{ produit5.stock }}</span>
+  </mat-card-content>
+  <mat-card-actions>
+
+    <button matButton disabled="{{ produit5.stock === 0 ? 'desiabled' : 'false' }}">Ajouter au panier</button>
+    <button matButton>Acheter</button>
+  </mat-card-actions>
+</mat-card>

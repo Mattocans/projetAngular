@@ -36,3 +36,11 @@ export const prod4: Produit = {
   stock: 56
 }
 
+export const prod5: Produit = {
+  id: 5,
+  nom: "Pull de Noël",
+  description: "PS : La femme n'est pas vendu avec le pull",
+  prix: 152.99,
+  image: "/img_2.png",
+  stock: 0
+}
