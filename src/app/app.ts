@@ -19,4 +19,11 @@ export class App {
 
   produits : Produit[] = [prod1,prod2,prod3,prod4,prod5]
 
+  addToCart(product: Produit){
+    console.log('Ajout '+product.nom+' au panier')
+  }
+  buy(product: Produit){
+    console.log('Achat '+product.nom)
+    product.stock = product.stock-1
+  }
 }

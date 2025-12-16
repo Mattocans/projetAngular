@@ -343,7 +343,7 @@
 <app-header></app-header>
 <app-product></app-product>
 @for (produit of produits; track produit) {
-  <app-card [product]="produit"></app-card>
+  <app-card [product]="produit" (addToCard)="addToCart($event)" (buy)="buy($event)"></app-card>
 }
 
 <footer><app-footer></app-footer> </footer>
