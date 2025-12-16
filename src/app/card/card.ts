@@ -8,7 +8,6 @@ import {
     MatCardHeader,
     MatCardImage, MatCardSubtitle, MatCardTitle
 } from "@angular/material/card";
-import {Product} from '../product/product';
 import {Produit} from '../model/produict.interface';
 
 
