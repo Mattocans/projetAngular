@@ -8,6 +8,7 @@ import {Header} from '../header/header';
   imports: [MatGridListModule],
   templateUrl: './footer.html',
   styleUrl: './footer.css',
+  standalone: true
 })
 
 export class Footer {

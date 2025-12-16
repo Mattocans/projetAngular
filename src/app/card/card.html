@@ -4,7 +4,7 @@
     <mat-card-title>{{ product().nom }}</mat-card-title>
     <mat-card-subtitle>{{ product().prix }} €</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="{{ product().image }}" alt="Pull dab">
+  <img mat-card-image src="{{ product().image === '' ? 'img_4.png' : product().image }}" alt="Pull dab">
   <mat-card-content>
     <p>
       {{ product().description }}
