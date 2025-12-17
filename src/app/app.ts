@@ -1,5 +1,4 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import {Header} from './header/header';
 import {Product} from './product/product';
 import {Footer} from './footer/footer';
@@ -9,7 +8,7 @@ import {Produit} from './model/produict.interface';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Product, Footer, Card],
+  imports: [Header, Product, Footer, Card],
   templateUrl: './app.html',
   standalone: true,
   styleUrl: './app.css'
