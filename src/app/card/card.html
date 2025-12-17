@@ -9,7 +9,11 @@
     <p>
       {{ product().description }}
     </p>
+    @if(product().stock === 0){
+      <span> Rupture de stock </span>
+    } @else {
     <span>Stock : {{ product().stock }}</span>
+    }
   </mat-card-content>
   <mat-card-actions>
 
