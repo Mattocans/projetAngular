@@ -5,10 +5,11 @@ import {Footer} from './footer/footer';
 import {prod1, prod2, prod3, prod4, prod5} from './data/dataProduit';
 import {Card} from './card/card';
 import {Produit} from './model/produict.interface';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Product, Footer, Card],
+  imports: [Header, Product, Footer, Card, MatGridListModule],
   templateUrl: './app.html',
   standalone: true,
   styleUrl: './app.css'
@@ -25,4 +26,6 @@ export class App {
     console.log('Achat '+product.nom)
     product.stock = product.stock-1
   }
+
+  count: number = 0
 }

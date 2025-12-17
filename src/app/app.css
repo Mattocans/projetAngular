@@ -2,3 +2,10 @@ footer{
   position: absolute;
   width: 100%;
 }
+
+.content {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  height: calc(100% - 200px - 64px - 42px);
+}

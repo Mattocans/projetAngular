@@ -10,7 +10,7 @@
       {{ product().description }}
     </p>
     @if(product().stock === 0){
-      <span> Rupture de stock </span>
+      <span style="color: red"> Rupture de stock </span>
     } @else {
     <span>Stock : {{ product().stock }}</span>
     }
