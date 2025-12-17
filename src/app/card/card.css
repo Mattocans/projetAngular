@@ -5,6 +5,7 @@
 .example-header-image {
   background-size: cover;
 }
+
 :host {
   display: block;
   width: 100%;

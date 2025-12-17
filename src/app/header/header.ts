@@ -13,4 +13,6 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   imports: [MatToolbarModule, MatButtonModule, MatIconModule],
   standalone: true
 })
-export class Header {}
+export class Header {
+  headerTitle: string = "Chill.exe"
+}

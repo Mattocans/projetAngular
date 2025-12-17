@@ -9,7 +9,7 @@ import {
     MatCardImage, MatCardSubtitle, MatCardTitle
 } from "@angular/material/card";
 import {Produit} from '../model/produict.interface';
-import {App} from '../app';
+
 
 
 @Component({
@@ -23,7 +23,10 @@ import {App} from '../app';
     MatCardHeader,
     MatCardImage,
     MatCardSubtitle,
-    MatCardTitle
+    MatCardTitle,
+    MatCardActions,
+    MatCardImage,
+    MatCardImage
   ],
   templateUrl: './card.html',
   styleUrl: './card.css',

@@ -29,4 +29,5 @@ describe('Footer', () => {
     expect(component.content).toBe("Footer de fou")
   });
 
+  
 });
