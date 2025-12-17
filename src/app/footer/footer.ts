@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {MatGridListModule} from '@angular/material/grid-list';
-import {Header} from '../header/header';
 
 
 @Component({
@@ -12,4 +11,5 @@ import {Header} from '../header/header';
 })
 
 export class Footer {
+  content: string = "Footer de fou"
 }
