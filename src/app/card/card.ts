@@ -9,7 +9,8 @@ import {
     MatCardImage, MatCardSubtitle, MatCardTitle
 } from "@angular/material/card";
 import {Produit} from '../model/produict.interface';
-
+import {App} from '../app';
+import {CurrencyPipe} from '@angular/common';
 
 
 @Component({
@@ -26,7 +27,9 @@ import {Produit} from '../model/produict.interface';
     MatCardTitle,
     MatCardActions,
     MatCardImage,
-    MatCardImage
+    MatCardImage,
+    MatCardTitle,
+    CurrencyPipe
   ],
   templateUrl: './card.html',
   styleUrl: './card.css',

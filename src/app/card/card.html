@@ -2,7 +2,7 @@
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>{{ product().nom }}</mat-card-title>
-    <mat-card-subtitle>{{ product().prix }} €</mat-card-subtitle>
+    <mat-card-subtitle>{{ product().prix | currency : "EUR" : "symbol" : "1.2-2" }}</mat-card-subtitle>
   </mat-card-header>
   <img mat-card-image src="{{ product().image === '' ? 'img_4.png' : product().image }}" alt="Pull dab">
   <mat-card-content>

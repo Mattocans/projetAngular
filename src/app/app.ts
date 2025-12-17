@@ -1,4 +1,4 @@
-import { Component, signal, inject } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import {Header} from './header/header';
 import {Product} from './product/product';
 import {Footer} from './footer/footer';
@@ -7,10 +7,13 @@ import {Card} from './card/card';
 import {Produit} from './model/produict.interface';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {CurrencyPipe, UpperCasePipe} from '@angular/common'
+import {ApiService} from './api.service';
+import {inject} from 'vitest';
 
 @Component({
   selector: 'app-root',
   imports: [Header, Product, Footer, Card, MatGridListModule],
+  providers: [ApiService],
   templateUrl: './app.html',
   standalone: true,
   styleUrl: './app.css'
@@ -21,6 +24,7 @@ export class App {
   produits : Produit[] = [prod1,prod2,prod3,prod4,prod5]
 
   addToCart(product: Produit){
+    console.log('Ajout '+product.nom+' au panier')
     console.log(new UpperCasePipe().transform(product.nom));
   }
   buy(product: Produit){
