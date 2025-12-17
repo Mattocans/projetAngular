@@ -13,7 +13,7 @@
   </mat-card-content>
   <mat-card-actions>
 
-    <button matButton disabled="{{ product().stock === 0 ? 'desiabled' : 'false' }}">Ajouter au panier</button>
-    <button matButton>Acheter</button>
+    <button matButton disabled="{{ product().stock === 0 ? 'desiabled' : 'false' }}" (click)="addToCard.emit(product())">Ajouter au panier</button>
+    <button matButton disabled="{{ product().stock === 0 ? 'desiabled' : 'false' }}" (click)="buy.emit(product())">Acheter</button>
   </mat-card-actions>
 </mat-card>
