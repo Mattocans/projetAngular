@@ -8,34 +8,17 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {CurrencyPipe, UpperCasePipe} from '@angular/common'
 import {ApiService} from './api.service';
 import {inject} from '@angular/core';
+import {RouterOutlet} from '@angular/router'
 
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Product, Footer, Card, MatGridListModule],
+  imports: [Header, Product, Footer, Card, MatGridListModule, RouterOutlet],
   providers: [ApiService],
   templateUrl: './app.html',
   standalone: true,
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('testAngular');
-  private apiService = inject(ApiService);
 
-  produits = this.apiService.produits
-
-  constructor() {
-    this.apiService.fetchproducts().subscribe()
-  }
-
-
-  addToCart(product: Pokemon){
-    console.log('Ajout '+product.nom+' au panier')
-    console.log(new UpperCasePipe().transform(product.nom));
-  }
-  buy(product: Pokemon){
-    console.log('Achat '+product.nom)
-    product.stock = product.stock-1
-  }
-  count: number = 0
 }
