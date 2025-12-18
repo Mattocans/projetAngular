@@ -1,7 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
-import { Produit } from './model/produict.interface'
+import {Pokemon} from './model/product.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -12,9 +12,9 @@ export class ApiService {
   readonly url = "http://localhost:3000/products/";
 
   fetchproducts(): Observable<any> {
-    return this.httpClient.get<Produit[]>(this.url)
+    return this.httpClient.get<Pokemon[]>(this.url)
   }
   getProductById(id: string) {
-    return this.httpClient.get<Produit>(this.url+id);
+    return this.httpClient.get<Pokemon>(this.url+id);
   }
 }

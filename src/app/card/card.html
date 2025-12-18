@@ -5,7 +5,7 @@
     <mat-card-subtitle>{{ product().prix | currency : "EUR" : "symbol" : "1.2-2" }}</mat-card-subtitle>
   </mat-card-header>
   {{ product().text }}
-  <img mat-card-image src="{{ product().image === [] ? 'img_4.png' : product().image }}" alt="{{ product().nom }}">
+  <img mat-card-image src="{{ product().image?.length ? 'https://strapi-production-2ff5.up.railway.app'+product().image[0].url : 'img_4.png' }}" alt="{{ product().nom }}">
   <mat-card-content>
     <p>
       {{ product().description }}

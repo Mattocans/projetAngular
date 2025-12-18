@@ -1,3 +1,11 @@
+export interface Image {
+  url: string;
+  formats?: {
+    small?: string;
+    thumbnail?: string;
+  };
+}
+
 export interface Pokemon {
   id: number
   documentId: string
@@ -6,5 +14,5 @@ export interface Pokemon {
   description: string
   prix: number
   stock: number
-  image: []
+  image: Image[]
 }
