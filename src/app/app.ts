@@ -22,10 +22,10 @@ export class App {
   protected readonly title = signal('testAngular');
   private apiService = inject(ApiService);
 
-  produits = signal<Pokemon[]>([]);
+  produits = this.apiService.produits
 
   constructor() {
-    this.fetch();
+    this.apiService.fetchproducts().subscribe()
   }
 
 
@@ -36,12 +36,6 @@ export class App {
   buy(product: Pokemon){
     console.log('Achat '+product.nom)
     product.stock = product.stock-1
-  }
-
-   fetch() {
-   return this.apiService.fetchproducts().subscribe(response => {
-      this.produits.set(response.data);
-    });
   }
   count: number = 0
 }
