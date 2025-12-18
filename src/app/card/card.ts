@@ -8,11 +8,11 @@ import {
     MatCardHeader,
     MatCardImage, MatCardSubtitle, MatCardTitle
 } from "@angular/material/card";
-import {Produit} from '../model/produict.interface';
-import {App} from '../app';
 import {CurrencyPipe} from '@angular/common';
 import {ApiService} from '../api.service';
 import {Pokemon} from '../model/product.interface';
+import {ActivatedRoute} from '@angular/router'
+
 
 
 @Component({
@@ -38,12 +38,17 @@ import {Pokemon} from '../model/product.interface';
   styleUrl: './card.css',
   standalone: true
 })
+
+
 export class Card {
   product = input.required<Pokemon>();
-
   private apiService = inject(ApiService);
+  private activatedRoute = inject(ActivatedRoute)
+
+  pokemon = this.apiService.pokemon
+
   constructor() {
-    this.apiService.getProductById("")
+    this.apiService.getProductById(this.activatedRoute.snapshot.params['id'])
   }
 
   addToCard = output<Pokemon>();

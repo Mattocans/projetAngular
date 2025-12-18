@@ -7,11 +7,13 @@ import {UpperCasePipe} from '@angular/common'
 import {MatGridListModule} from '@angular/material/grid-list';
 import { Product} from '../product/product'
 import {Card} from '../card/card';
+import { RouterModule  } from '@angular/router';
+
 
 
 @Component({
   selector: 'app-home',
-  imports: [RouterOutlet, RouterOutlet, MatGridListModule,Product, Card  ],
+  imports: [RouterOutlet, RouterOutlet, MatGridListModule,Product, Card, RouterModule ],
   templateUrl: './home.html',
   styleUrl: './home.css',
   standalone: true

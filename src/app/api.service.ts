@@ -7,6 +7,11 @@ type ProductResponse = {
   data: Pokemon[];
 };
 
+type OneProductResponse = {
+  data: Pokemon;
+};
+
+
 @Injectable({
   providedIn: 'root',
 })
@@ -17,6 +22,10 @@ export class ApiService {
   private _produits = signal<Pokemon[]>([]);
   produits = this._produits.asReadonly()
 
+  private _pokemon = signal<Pokemon>({}as Pokemon);
+  pokemon  = this._pokemon.asReadonly()
+
+
   fetchproducts() {
     return this.httpClient
       .get<ProductResponse>(this.url)
@@ -24,6 +33,9 @@ export class ApiService {
   }
 
   getProductById(id: string) {
-    return this.httpClient.get<Pokemon>(this.url+id);
+    return this.httpClient
+      .get<OneProductResponse>(this.url+id)
+      .pipe(tap((pokemon) => this._pokemon.set(pokemon.data)));
+
   }
 }

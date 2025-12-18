@@ -1,0 +1,8 @@
+  <mat-grid-list cols="3" rowHeight="4:6">
+
+    <mat-grid-tile>
+        <app-card [product]="pokemon()" (addToCard)="addToCart($event)" (buy)="buy($event)"></app-card>
+    </mat-grid-tile>
+
+
+</mat-grid-list>

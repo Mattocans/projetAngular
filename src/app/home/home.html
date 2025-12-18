@@ -1,10 +1,17 @@
 <app-product></app-product>
 
+
 <mat-grid-list cols="3" rowHeight="4:6">
+
   @for (produit of produits(); track produit) {
-    <mat-grid-tile>
-      <app-card [product]="produit" (addToCard)="addToCart($event)" (buy)="buy($event)"></app-card>
-    </mat-grid-tile>
+
+      <mat-grid-tile>
+        <a [routerLink] = "['/products', produit.documentId]">
+
+        <app-card [product]="produit" (addToCard)="addToCart($event)" (buy)="buy($event)"></app-card>
+        </a>
+      </mat-grid-tile>
+
   }
 
 
