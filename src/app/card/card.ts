@@ -1,4 +1,4 @@
-import {Component, input, output} from '@angular/core';
+import {Component, inject, input, output} from '@angular/core';
 import {MatButton} from "@angular/material/button";
 import {
     MatCard,
@@ -11,6 +11,8 @@ import {
 import {Produit} from '../model/produict.interface';
 import {App} from '../app';
 import {CurrencyPipe} from '@angular/common';
+import {ApiService} from '../api.service';
+import {Pokemon} from '../model/product.interface';
 
 
 @Component({
@@ -31,13 +33,19 @@ import {CurrencyPipe} from '@angular/common';
     MatCardTitle,
     CurrencyPipe
   ],
+  providers: [ApiService],
   templateUrl: './card.html',
   styleUrl: './card.css',
   standalone: true
 })
 export class Card {
-  product = input.required<Produit>();
+  product = input.required<Pokemon>();
 
-  addToCard = output<Produit>();
-  buy = output<Produit>();
+  private apiService = inject(ApiService);
+  constructor() {
+    this.apiService.getProductById("")
+  }
+
+  addToCard = output<Pokemon>();
+  buy = output<Pokemon>();
 }

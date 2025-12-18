@@ -2,9 +2,8 @@ import { Component, signal } from '@angular/core';
 import {Header} from './header/header';
 import {Product} from './product/product';
 import {Footer} from './footer/footer';
-import {prod1, prod2, prod3, prod4, prod5} from './data/dataProduit';
 import {Card} from './card/card';
-import {Produit} from './model/produict.interface';
+import {Pokemon} from './model/product.interface';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {CurrencyPipe, UpperCasePipe} from '@angular/common'
 import {ApiService} from './api.service';
@@ -23,18 +22,18 @@ export class App {
   protected readonly title = signal('testAngular');
   private apiService = inject(ApiService);
 
-  produits = signal<Produit[]>([]);
+  produits = signal<Pokemon[]>([]);
 
   constructor() {
     this.fetch();
   }
 
 
-  addToCart(product: Produit){
+  addToCart(product: Pokemon){
     console.log('Ajout '+product.nom+' au panier')
     console.log(new UpperCasePipe().transform(product.nom));
   }
-  buy(product: Produit){
+  buy(product: Pokemon){
     console.log('Achat '+product.nom)
     product.stock = product.stock-1
   }
