@@ -8,7 +8,8 @@ import {Produit} from './model/produict.interface';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {CurrencyPipe, UpperCasePipe} from '@angular/common'
 import {ApiService} from './api.service';
-import {inject} from 'vitest';
+import {inject} from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -20,8 +21,14 @@ import {inject} from 'vitest';
 })
 export class App {
   protected readonly title = signal('testAngular');
+  private apiService = inject(ApiService);
 
-  produits : Produit[] = [prod1,prod2,prod3,prod4,prod5]
+  produits = signal<Produit[]>([]);
+
+  constructor() {
+    this.fetch();
+  }
+
 
   addToCart(product: Produit){
     console.log('Ajout '+product.nom+' au panier')
@@ -32,5 +39,10 @@ export class App {
     product.stock = product.stock-1
   }
 
+   fetch() {
+   return this.apiService.fetchproducts().subscribe(response => {
+      this.produits.set(response.data);
+    });
+  }
   count: number = 0
 }
