@@ -7,7 +7,12 @@
 
   </div>
   <span class="example-spacer"></span>
-  <button matIconButton (click)="goPanier()">
+  <button
+    mat-icon-button
+    (click)="goPanier()"
+    [matBadge]="cartCount()"
+    matBadgeColor="warn"
+    matBadgeHidden="cartCount() === 0">
     <mat-icon>shopping_cart</mat-icon>
   </button>
   <button matIconButton>

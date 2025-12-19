@@ -13,6 +13,7 @@ import {
 } from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {ApiService} from '../api.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-panier',
@@ -41,7 +42,7 @@ export class Panier {
   private apiService = inject(ApiService);
 
   produits = this.apiService.produitInCart
-  constructor() {
+  constructor(private router: Router) {
   }
 
   prixTotal(){
@@ -81,11 +82,17 @@ export class Panier {
   }
 
   buy(){
-    for(let t of this.produits()){
+    /*for(let t of this.produits()){
       t.stock = t.stock-t.inCart;
       t.inCart = 0;
     }
-    this.apiService.clearCart();
+    this.apiService.clearCart()
+     */
+    this.router.navigate(['/paiement']);
+  }
+
+  cartCount() {
+    return this.apiService.produitInCart().length
   }
 
 }
