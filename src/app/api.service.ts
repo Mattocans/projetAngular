@@ -25,6 +25,9 @@ export class ApiService {
   private _pokemon = signal<Pokemon>({}as Pokemon);
   pokemon  = this._pokemon.asReadonly()
 
+  private _order = signal<{}>({});
+  order = this._order.asReadonly();
+
   private _produitsInCart = signal<Pokemon[]>([])
   produitInCart = this._produitsInCart.asReadonly();
   addToCart(product: Pokemon) {

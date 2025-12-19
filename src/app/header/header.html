@@ -10,12 +10,9 @@
   <button
     mat-icon-button
     (click)="goPanier()"
-    [matBadge]="cartCount()"
+    matBadge="cartCount()"
     matBadgeColor="warn"
     matBadgeHidden="cartCount() === 0">
     <mat-icon>shopping_cart</mat-icon>
-  </button>
-  <button matIconButton>
-    <mat-icon>share</mat-icon>
   </button>
 </mat-toolbar>
