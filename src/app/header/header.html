@@ -1,13 +1,16 @@
 <mat-toolbar>
-  <button matIconButton class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>{{ headerTitle }}</span>
+  <div (click)="goHome()">
+    <button matIconButton>
+      <mat-icon>home</mat-icon>
+      <span>{{ headerTitle }}</span>
+    </button>
+
+  </div>
   <span class="example-spacer"></span>
-  <button matIconButton class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
+  <button matIconButton (click)="goPanier()">
+    <mat-icon>shopping_cart</mat-icon>
   </button>
-  <button matIconButton class="example-icon" aria-label="Example icon-button with share icon">
+  <button matIconButton>
     <mat-icon>share</mat-icon>
   </button>
 </mat-toolbar>

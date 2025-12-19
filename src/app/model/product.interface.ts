@@ -15,4 +15,5 @@ export interface Pokemon {
   prix: number
   stock: number
   image: Image[]
+  inCart: number
 }

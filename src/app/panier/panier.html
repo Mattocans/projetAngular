@@ -1,0 +1,47 @@
+
+<h1>Panier</h1>
+
+<mat-grid-list cols="1" rowHeight="10:1">
+  @for (produit of produits(); track produit) {
+      <mat-card class="example-card" appearance="outlined">
+        <mat-card-header>
+          <div style="margin-right: 5px"><mat-card-title>{{ produit.nom }}</mat-card-title></div>
+          <div style="margin-right: 5px;"><mat-card-subtitle></mat-card-subtitle></div>
+
+        </mat-card-header>
+        <mat-card-content>
+          <button matIconButton (click)="plusStock(produit.documentId)">
+            <mat-icon>+</mat-icon>
+          </button>
+          <button matIconButton (click)="moinsStock(produit.documentId)">
+            <mat-icon>-</mat-icon>
+          </button>
+          @if(produit.stock === 0){
+            <span style="color: red"> Rupture de stock </span>
+          } @else {
+            <span style="color: green">En stock : {{ produit.inCart }} </span> <!-- {{ produit.inPanier }} -->
+          }
+        </mat-card-content>
+        <mat-card-actions>
+          <div>
+            <div style="text-align: left"><button matButton (click)="supp(produit.documentId)">Supprimer</button></div>
+            <div style="text-align: right;"><span>{{ produit.prix | currency : "EUR" : "symbol" : "1.2-2" }}</span></div>
+          </div>
+
+        </mat-card-actions>
+      </mat-card>
+
+  }
+</mat-grid-list>
+<div><br><br></div>
+<mat-card class="example-card" appearance="outlined">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Total du panier</mat-card-title>
+    <mat-card-subtitle>{{ prixTotal() | currency : "EUR" : "symbol" : "1.2-2" }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <button matButton (click)="buy()">Acheter</button>
+  </mat-card-actions>
+</mat-card>
+

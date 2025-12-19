@@ -53,7 +53,13 @@ export class PokemonView {
   addToCart(product: Pokemon){
     console.log('Ajout '+product.nom+' au panier')
     console.log(new UpperCasePipe().transform(product.nom));
+    if(product.inCart == 0){
+      this.apiService.addToCart(product);
+      console.log(this.apiService.produitInCart.length)
+    }
+    product.inCart = product.inCart + 1;
   }
+
   buy(product: Pokemon){
     console.log('Achat '+product.nom)
     product.stock = product.stock-1
