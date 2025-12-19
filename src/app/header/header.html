@@ -1,11 +1,11 @@
-<mat-toolbar>
+<mat-toolbar class="header">
   <div (click)="goHome()">
     <button matIconButton>
-      <mat-icon>home</mat-icon>
-      <span>{{ headerTitle }}</span>
+      <mat-icon class="logo">home</mat-icon>
     </button>
-
   </div>
+  <span class="center"> {{ headerTitle }} </span>
+
   <span class="example-spacer"></span>
   <button matIconButton (click)="goPanier()">
     <mat-icon>shopping_cart</mat-icon>

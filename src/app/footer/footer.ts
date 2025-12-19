@@ -14,9 +14,9 @@ import {FormsModule} from '@angular/forms';
 export class Footer {
   nom: string = '';
   email: string = '';
+  submitted = false;
 
   onSubmit() {
-    console.log(`Prénom: ${this.nom}`);
-    console.log(`Email: ${this.email}`);
+    this.submitted = true
   }
 }

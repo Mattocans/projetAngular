@@ -16,7 +16,7 @@ import {Router} from '@angular/router';
 })
 export class Header {
 
-  headerTitle: string = "Chill.exe"
+  headerTitle: string = "POKEMANIA"
 
   constructor(private router: Router) {}
 

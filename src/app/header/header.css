@@ -1,3 +1,29 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.center{
+  text-align: center;
+  width: 100%;
+}
+
+.header{
+  height: 15%;
+  font-weight: bold;
+  font-family: "Book Antiqua";
+  font-size: 100px;
+  background-image: linear-gradient(
+    to left,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
+}
+
+.logo{
+
+}

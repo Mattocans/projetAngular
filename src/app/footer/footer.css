@@ -1,3 +1,25 @@
-mat-grid-tile {
-  background: violet;
+mat-grid-list {
+  margin-top: 20px;
+  border-top: 3px solid;
+  border-image: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    purple
+  ) 1;}
+
+.promo{
+  font-weight: bold;
+  font-family: "Book Antiqua";
+  font-size: 25px;
+  margin-top: 15px;
+
+}
+
+
+.footer-form{
+  text-align: center;
 }

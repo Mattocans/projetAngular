@@ -5,7 +5,6 @@ import {RouterOutlet} from '@angular/router'
 import {Pokemon} from '../model/product.interface'
 import {CurrencyPipe, UpperCasePipe} from '@angular/common'
 import {MatGridListModule} from '@angular/material/grid-list';
-import { Product} from '../product/product'
 import {Card} from '../card/card';
 import { RouterModule  } from '@angular/router';
 import {MatButton} from '@angular/material/button';
@@ -22,7 +21,7 @@ import {
 
 @Component({
   selector: 'app-home',
-  imports: [RouterOutlet, RouterOutlet, MatGridListModule, Product, Card, RouterModule, CurrencyPipe, MatButton, MatCard, MatCardActions, MatCardAvatar, MatCardContent, MatCardHeader, MatCardImage, MatCardSubtitle, MatCardTitle],
+  imports: [RouterOutlet, RouterOutlet, MatGridListModule, Card, RouterModule, CurrencyPipe, MatButton, MatCard, MatCardActions, MatCardAvatar, MatCardContent, MatCardHeader, MatCardImage, MatCardSubtitle, MatCardTitle],
   templateUrl: './home.html',
   styleUrl: './home.css',
   standalone: true

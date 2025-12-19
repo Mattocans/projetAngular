@@ -14,7 +14,6 @@ import {Pokemon} from '../model/product.interface';
 import {ActivatedRoute} from '@angular/router';
 import {UpperCasePipe} from '@angular/common'
 import {Card} from '../card/card'
-import {Product} from '../product/product'
 import { MatGridListModule } from '@angular/material/grid-list';
 
 
@@ -33,7 +32,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatCardImage,
     MatCardImage,
     MatCardTitle,
-    CurrencyPipe,MatGridListModule, Product, Card  ],
+    CurrencyPipe,MatGridListModule, Card  ],
   templateUrl: './pokemon-view.html',
   styleUrl: './pokemon-view.css',
   standalone: true
