@@ -1,0 +1,60 @@
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+<form #userForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col" style="text-align: center;">
+      <h2>Mode de livraison</h2>
+
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="domicil">À Domicile</mat-radio-button>
+        <mat-radio-button value="pointRelai">En Point Relai</mat-radio-button>
+      </mat-radio-group>
+      <br>
+      <mat-form-field>
+        <mat-label>--Selectionner un mode--</mat-label>
+        <mat-select>
+          @for (mode of modeLivraison; track mode) {
+            <mat-option [value]="mode.value">{{mode.value}}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="col" style="text-align: center;">
+      <h2>Mode de paiement</h2>
+
+      <mat-radio-group aria-label="Select an option">
+        @for (mode of modePaiement; track mode) {
+          <mat-radio-button [value]="mode.value">{{mode.value}}</mat-radio-button>
+        }
+      </mat-radio-group>
+    </div>
+  </div>
+  <h2>Informations personnelles</h2>
+  <div class="row">
+    <div class="col">
+      <input class="form-control" type="text" [(ngModel)]="name" name="name" required placeholder="Nom">
+      <input class="form-control" type="email" [(ngModel)]="email" name="email" required placeholder="Email" pattern="[\w\.]+@([\w-]+\.)+[\w-]{2,4}">
+    </div>
+
+    <div class="col">
+      <input class="form-control" type="text" [(ngModel)]="adress" name="adress" required placeholder="Adresse">
+      <input class="form-control" type="text" [(ngModel)]="city" name="city" required placeholder="Ville">
+      <input class="form-control" type="text" [(ngModel)]="state" name="state" required placeholder="Département">
+      <input class="form-control" type="text" [(ngModel)]="zip" name="zip" required placeholder="Code Postal">
+      <input class="form-control" type="text" [(ngModel)]="country" #countryCtrl="ngModel" name="country" required placeholder="Pays" [class.is-invalid]="countryCtrl.invalid || (country && country !== 'France')">
+    </div>
+  </div>
+  <br><br>
+  <div class="row" style="text-align: center">
+    <div class="col"><input type="text"  [(ngModel)]="reduc" name="reduc" placeholder="Code de Réduction"> </div>
+    <div class="col"><button class="btn btn-outline-primary" type="submit" [disabled]="userForm.invalid"> Payer {{ prixTotal() | currency : "EUR" : "symbol" : "1.2-2" }} </button></div>
+    <div class="col"></div>
+  </div>
+
+</form>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+</body>
