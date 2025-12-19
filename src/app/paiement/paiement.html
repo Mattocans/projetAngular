@@ -49,8 +49,9 @@
   </div>
   <br><br>
   <div class="row" style="text-align: center">
-    <div class="col"><input type="text"  [(ngModel)]="reduc" name="reduc" placeholder="Code de Réduction"> </div>
-    <div class="col"><button class="btn btn-outline-primary" type="submit" [disabled]="userForm.invalid"> Payer {{ prixTotal() | currency : "EUR" : "symbol" : "1.2-2" }} </button></div>
+    <div class="col"><input class="form-control" type="text" [(ngModel)]="reduc" #reducCtrl="ngModel" name="reduc" placeholder="Code de Réduction" [class.is-invalid]="reducCtrl.invalid || (reduc && reduc !== 'POKEGAI')"
+                            [class.is-valid]="reducCtrl.valid || (reduc && reduc !== 'POKEGAI')"></div>
+    <div class="col"><button class="btn btn-outline-primary" type="submit" [disabled]="userForm.invalid"> Payer {{ prixTotal() | currency : "EUR" : "symbol" : "1.2-2" }}</button>@if(reduc==="POKEGAI"){<span style="color: blue"> -10% </span>}</div>
     <div class="col"></div>
   </div>
 
