@@ -1,3 +1,11 @@
 <mat-grid-list cols="1" rowHeight="100px">
-  <mat-grid-tile>{{ content }}</mat-grid-tile>
+  <mat-grid-tile>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+
+      <input type="text" [(ngModel)]="nom" name="nom" required placeholder="Prénom">
+      <input type="email" [(ngModel)]="email" name="email" required placeholder="Email" pattern="[\w\.]+@([\w-]+\.)+[\w-]{2,4}">
+
+  <button type="submit" [disabled]="userForm.invalid"> Enregistré </button>
+</form>
+  </mat-grid-tile>
 </mat-grid-list>

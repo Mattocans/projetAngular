@@ -33,7 +33,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatCardImage,
     MatCardImage,
     MatCardTitle,
-    CurrencyPipe,MatGridListModule,Product, Card  ],
+    CurrencyPipe,MatGridListModule, Product, Card  ],
   templateUrl: './pokemon-view.html',
   styleUrl: './pokemon-view.css',
   standalone: true
