@@ -3,16 +3,16 @@
 }
 
 .center{
-  text-align: center;
-  width: 100%;
+  text-align: left;
+  margin-left: 15px;
 }
 
 .header{
-  height: 15%;
+  height: 11%;
   font-weight: bold;
   font-family: "Book Antiqua";
-  font-size: 100px;
-  background-image: linear-gradient(
+  font-size: 30px;
+  border-image: linear-gradient(
     to left,
     violet,
     indigo,
@@ -21,7 +21,8 @@
     yellow,
     orange,
     red
-  );
+  ) 1 ;
+  border-bottom:  4px solid;
 }
 
 .logo{
