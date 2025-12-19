@@ -6,6 +6,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import {ApiService} from '../api.service';
 import {CurrencyPipe} from '@angular/common';
+import {Router} from '@angular/router';
 
 interface Livraison {
   value: string;
@@ -22,6 +23,10 @@ interface Paiement2 {
   standalone: true
 })
 export class Paiement {
+
+  constructor(private router: Router) {
+  }
+
   private apiService = inject(ApiService);
 
   produits = this.apiService.produitInCart
@@ -31,6 +36,7 @@ export class Paiement {
     {value: 'Express (24–48h)'},
     {value: 'Livraison programmée (date / créneau horaire)'},
   ];
+
   modePaiement: Paiement2[] = [
     {value: 'Visa'},
     {value: 'MasterCard'},
@@ -81,6 +87,8 @@ export class Paiement {
         console.error('Erreur commande', err);
       }
     });
+
+    this.router.navigate(['/validation']);
   }
 
   prixTotal(){

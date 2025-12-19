@@ -51,6 +51,13 @@ export class Card {
     this.apiService.getProductById(this.activatedRoute.snapshot.params['id'])
   }
 
+  stock() {
+    if(this.product().inCart < this.product().stock){
+      return true
+    }
+    return false
+  }
+
   addToCard = output<Pokemon>();
   buy = output<Pokemon>();
 }

@@ -20,7 +20,7 @@
 
   <mat-card-actions style="justify-content: space-between;">
 
-    @if(product().stock === 0){
+    @if(product().stock === 0 || !stock()){
       <button matButton disabled="disabled">Ajouter au panier</button>
     } @else {
       <button matButton (click)="addToCard.emit(product())">Ajouter au panier</button>

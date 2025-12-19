@@ -3,6 +3,7 @@ import { Home } from './home/home'
 import {Panier} from './panier/panier';
 import { PokemonView} from './pokemon-view/pokemon-view'
 import {Paiement} from './paiement/paiement';
+import {Validation} from './validation/validation';
 
 export const routes: Routes = [
   {
@@ -16,5 +17,6 @@ export const routes: Routes = [
   },
   {path: 'panier', component: Panier},
   {path: 'paiement', component: Paiement},
+  {path: 'validation', component: Validation},
 
 ];
