@@ -49,14 +49,16 @@ export class PokemonView {
     this.apiService.getProductById(this.activatedRoute.snapshot.params['id']).subscribe()
   }
 
-  addToCart(product: Pokemon){
-    console.log('Ajout '+product.nom+' au panier')
+  addToCart(product: Pokemon) {
+    console.log('Ajout ' + product.nom + ' au panier')
     console.log(new UpperCasePipe().transform(product.nom));
-    if(product.inCart == 0){
+    if (product.inCart == 0) {
       this.apiService.addToCart(product);
       console.log(this.apiService.produitInCart.length)
     }
-    product.inCart = product.inCart + 1;
+    if (product.inCart < product.stock) {
+      product.inCart = product.inCart + 1;
+    }
   }
 
   buy(product: Pokemon){

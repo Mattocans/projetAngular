@@ -22,10 +22,8 @@
 
     @if(product().stock === 0){
       <button matButton disabled="disabled">Ajouter au panier</button>
-      <button matButton disabled="disabled">Acheter</button>
     } @else {
       <button matButton (click)="addToCard.emit(product())">Ajouter au panier</button>
-      <button matButton (click)="buy.emit(product())">Acheter</button>
     }
 
   </mat-card-actions>
